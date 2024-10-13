@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f3e7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      width: 100%;
+      background-color: #D2691E;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     
+      width: 100%;
+      padding: 20px;
+    }
+    .logo {
+      margin-left: 30px;
+      padding-left: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    nav {
+      margin-right: 30px;
+      padding-right: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    #banner {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 20px;
+    }
+
+    h1, h2 {
+      color: #D2691E;
+    }
+
+    h1 {
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    p{
+      max-width: 600px;
+      text-align: center;
+    }
+
+    form {
+      background-color: #fff3e0;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin: 0px ;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    input, textarea {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 2px;
+      margin: 10px;
+      font-size: 16px;
+      width: 90%;
+    }
+
+    button {
+      background-color: #FF7F50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #FF6347;
+    }
+    #banner {
+      width: 100%;       /* La imagen tomará el 100% del ancho disponible */
+      max-width: 600px;  /* Pero no se expandirá más allá de 600px */
+      height: auto;      /* Mantiene la proporción de la imagen */
+      margin-top: 20px;  /* Añade algo de margen superior */
+    }
+    
+    #posts-list {
+      max-width: 600px;
+      width: 100%;
+      margin-top: 20px;
+     
+      align-items: center;
+      justify-content: center;
+    }
+
+    .post {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin: 10px 0;
+    }
+
+    .post h3 {
+      margin: 0 0 10px;
+      color: #FF7F50;
+    }
+
+    .post p {
+      margin: 5px 0;
+    }
+
+    .post small {
+      color: #777;
+      font-size: 14px;
+    }
+    .comment-form {
+      max-width: 500px; /* Limitar el tamaño del formulario de comentarios */
+      margin-top: 10px;
+    }
+
+    #logout-button {
+      background-color: #D2691E;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      border: none;
+    }
+
+    #logout-button:hover {
+      background-color: #a64b20;
+    }
+</style>
+    </head>
+    
+  <body>
+    
+    <div class="container">
+
+      <header>
+        <div class="logo">
+          <img src="logo.png" alt="Logo de la comunidad"> <!-- Aquí puedes poner la URL de tu logo -->
+          <h1>Comunidad de Vecinos</h1>
+        </div>
+        <nav>
+          <a href="#login-form">Login</a>
+          <a href="#register-form">Registrarse</a>
+          <a href="#content">Contenido</a>
+        </nav>
+      </header>
+
+    
+      <div class="container">
+      <h1 >Comunidad de Vecinos</h1>
+      <p >Mi página de comunidad de vecinos es un espacio digital diseñado para facilitar la comunicación entre residentes. Aquí los vecinos pueden realizar publicaciones, compartir avisos importantes, organizar eventos o expresar inquietudes. Además, ofrece la posibilidad de comentar y participar activamente en las discusiones, fomentando el sentido de comunidad y colaboración entre todos los usuarios.</p>
+      <h2>Registro y Autenticación</h2>
+    <form id="register-form">
+      <div class="mb-3">
+      <input type="email" id="register-email" placeholder="Email" required>
+    </div>
+      <input type="password" id="register-password" placeholder="Password" required>
+      <button type="submit">Registrarse</button>
+    </form>
+    <img id="banner" src="banner2.png" alt="Banner de la comunidad">
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <img id="banner" src="banner3.png" alt="Banner de la comunidad">
+    <h2>Crear Publicación</h2>
+
+   
+
+    <form id="post-form">
+      <input type="text" id="post-title" placeholder="Título" required>
+      <textarea id="post-content" placeholder="Contenido" required></textarea>
+      <button type="submit">Publicar</button>
+    </form>
+
+
+
+    <img id="banner" src="banner.png" alt="Banner de la comunidad">
+
+
+
+    <h2>Listado de Publicaciones</h2>
+    <div id="posts-list"></div>
+    <button id="logout-button">Cerrar Sesión</button>
+
+  </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+      import { getFirestore, addDoc, collection, getDocs, doc, setDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+      import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js";
+
+
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDbZpjb8NnynUdRECesEixOK5AgiJutuk",
+        authDomain: "chat-global-726e5.firebaseapp.com",
+        projectId: "chat-global-726e5",
+        storageBucket: "chat-global-726e5.appspot.com",
+        messagingSenderId: "856256776216",
+        appId: "1:856256776216:web:87688d16f44855e3545b6d"
+      };
+  
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+  
+      const postForm = document.getElementById('post-form');
+      postForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+  
+          const title = document.getElementById('post-title').value;
+          const content = document.getElementById('post-content').value;
+          const imageFile = document.getElementById('post-image').files[0]; // Obtener el archivo de imagen
+
+          try {
+              await addDoc(collection(db, 'posts'), {
+                  title: title,
+                  content: content,
+                  user: auth.currentUser.email,
+                  timestamp: new Date(),
+                  
+              });
+              alert("Publicación creada exitosamente");
+              loadPosts();
+          } catch (error) {
+              console.log("Error al crear la publicación: ", error);
+              alert("Error al crear la publicación: " + error.message);
+          }
+      });
+  
+      async function loadPosts() {
+          const postsList = document.getElementById('posts-list');
+          postsList.innerHTML = '';
+          const querySnapshot = await getDocs(collection(db, 'posts'));
+  
+          querySnapshot.forEach(async (doc) => {
+              const post = doc.data();
+              const postElement = document.createElement('div');
+              postElement.className = 'post';
+              postElement.innerHTML = `
+                  <h3 class="text-center" id ="content">${post.title}</h3>
+                  <p>${post.content}</p>
+                  <small>Publicado por: ${post.user}</small>
+                  <form class="comment-form" data-post-id="${doc.id}">
+                    <textarea placeholder="Escribe un comentario" required></textarea>
+                   
+                    <button type="submit">Comentar</button>
+                  </form>
+                  <div class="comments-list" id="comments-${doc.id}"></div>
+              `;
+              postsList.appendChild(postElement);
+  
+              // Cargar comentarios
+              loadComments(doc.id);
+  
+              // Manejar el envío del formulario de comentarios
+              const commentForm = postElement.querySelector('.comment-form');
+              commentForm.addEventListener('submit', async (e) => {
+                  e.preventDefault();
+                  const commentContent = commentForm.querySelector('textarea').value;
+                  try {
+                      await addDoc(collection(db, 'posts', doc.id, 'comments'), {
+                          content: commentContent,
+                          user: auth.currentUser.email,
+                          timestamp: new Date(),
+                      });
+                      alert('Comentario agregado exitosamente');
+                      commentForm.reset();
+                      loadComments(doc.id);
+                  } catch (error) {
+                      console.log("Error al agregar el comentario: ", error);
+                  }
+              });
+          });
+      }
+  
+      async function loadComments(postId) {
+          const commentsList = document.getElementById(`comments-${postId}`);
+          commentsList.innerHTML = '';
+          const commentsSnapshot = await getDocs(query(collection(db, 'posts', postId, 'comments'), orderBy('timestamp')));
+          commentsSnapshot.forEach((commentDoc) => {
+              const comment = commentDoc.data();
+              const commentElement = document.createElement('p');
+              commentElement.innerHTML = `<strong>${comment.user}</strong>: ${comment.content}`;
+              commentsList.appendChild(commentElement);
+          });
+      }
+  
+      loadPosts();
+  </script>
+  
+
+</body>
+</html>
